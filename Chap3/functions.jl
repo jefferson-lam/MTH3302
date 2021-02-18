@@ -8,7 +8,7 @@ See also `roc()` of MLBase.
 function auc(gt::Array{<:Real},scores::Array{<:Real})
 
     # Compute the ROC curve for 100 equally spaced thresholds - see `roc()`
-    r = roc(gt, scores)
+    r = roc(gt, scores, 0:.01:1)
 
     # Compute the true positive rate and false positive rate
     tpr = true_positive_rate.(r)
